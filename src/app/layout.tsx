@@ -1,14 +1,16 @@
 import Navbar from "@/components/Navbar";
-import { Toaster } from "@/components/ui/Toaster";
 import { cn } from "@/lib/utils";
-import "@/styles/globals.css";
 import { Inter } from "next/font/google";
-export const metadata = {
-  title: "CodeAura",
-  description: "A social media platform for Devs",
-};
+import { Toaster } from "@/components/ui/Toaster";
+
+import "@/styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const metadata = {
+  title: "Breadit",
+  description: "A Reddit clone built with Next.js and TypeScript.",
+};
 
 export default function RootLayout({
   children,
@@ -24,15 +26,11 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-screen pt-12 bg-slate-50 antialiased">
-
-        <Navbar/>
+        <Navbar />
         <div className="container max-w-7xl mx-auto h-full pt-12">
-
-        {children}
+          {children}
         </div>
-
-        <Toaster/>
-        
+        <Toaster />
       </body>
     </html>
   );
