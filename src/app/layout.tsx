@@ -4,12 +4,13 @@ import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/Toaster";
 
 import "@/styles/globals.css";
+import Providers from "@/components/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Breadit",
-  description: "A Reddit clone built with Next.js and TypeScript.",
+  title: "CodeAura",
+  description: "A community for dev .",
 };
 
 export default function RootLayout({
@@ -25,13 +26,15 @@ export default function RootLayout({
         inter.className
       )}
     >
-      <body className="min-h-screen pt-12 bg-slate-50 antialiased">
-        <Navbar />
-        <div className="container max-w-7xl mx-auto h-full pt-12">
-          {children}
-        </div>
-        <Toaster />
-      </body>
+      <Providers>
+        <body className="min-h-screen pt-12 bg-slate-50 antialiased">
+          <Navbar />
+          <div className="container max-w-7xl mx-auto h-full pt-12">
+            {children}
+          </div>
+          <Toaster />
+        </body>
+      </Providers>
     </html>
   );
 }
